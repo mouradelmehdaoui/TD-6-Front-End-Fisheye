@@ -1,0 +1,67 @@
+
+function displayModal() {
+    const modal = document.getElementById("contact_modal");
+	modal.style.display = "block";
+ 
+}
+
+function closeModal() {
+    const modal = document.getElementById("contact_modal");
+    modal.style.display = "none";
+}
+
+// déclaration variables DOM
+const cursorClose = document.getElementById('img-close')
+const btnContact = document.querySelector('.btn-contact')
+const form = document.getElementById("form");
+
+
+
+// fonctions ecouteurs d'evenements
+
+
+btnContact.addEventListener("click", displayModal, false)
+cursorClose.addEventListener("click", closeModal, false)
+
+form.addEventListener("submit", function (e) {
+  const formData = new FormData(form);
+  e.preventDefault();
+  var object = {};
+  formData.forEach((value, key) => {
+    object[key] = value;
+  });
+  var json = JSON.stringify(object);
+
+console.log(json)
+//   fetch("https://api.web3forms.com/submit", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//       Accept: "application/json"
+//     },
+//     body: json
+//   })
+//     .then(async (response) => {
+//       let json = await response.json();
+//       if (response.status == 200) {
+//         result.innerHTML = json.message;
+//         result.classList.remove("text-gray-500");
+//         result.classList.add("text-green-500");
+//       } else {
+//         console.log(response);
+//         result.innerHTML = json.message;
+//         result.classList.remove("text-gray-500");
+//         result.classList.add("text-red-500");
+//       }
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//       result.innerHTML = "Something went wrong!";
+//     })
+//     .then(function () {
+//       form.reset();
+//       setTimeout(() => {
+//         result.style.display = "none";
+//       }, 5000);
+//     });
+});
