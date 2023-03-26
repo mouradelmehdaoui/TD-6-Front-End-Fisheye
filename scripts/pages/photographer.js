@@ -12,6 +12,8 @@ class PhotographerApp {
             const photographer = await this.PhotographerApi.getPhotographersById(id);
             this.$cardsContainer.innerHTML = new PhotographerCard(photographer).createProfile()
         })
+
+        Landing()
     }
 }
 

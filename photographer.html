@@ -1,52 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-      <!-- Templates   -->
+
+<head>
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+  <!-- Templates   -->
   <script src="services/PhotographerApi.js" defer></script>
   <script src="templates/PhotographerCard.js" defer></script>
+  <script src="templates/Landing.js" defer></script>
   <script src="/scripts/pages/photographer.js" defer></script>
   <script src="/scripts/utils/contactForm.js" defer></script>
-    <title>Fisheye - photographe </title>
-  </head>
-  <body>
-    <header>
-      <img src="assets/images/logo.png" class="logo" />
-    </header>
-    <main id="main">
-      <div class="photograph-header">
-      </div>
-    </main>
-    <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2 id="form-title">Contactez-moi</h2>
-          <img id="img-close" src="assets/icons/close.svg" />
-        </header>
-				<form id="form" method="POST" action="">
-					<div>
-						<label id="first">Prénom</label>
-						<input type="text" name="first" id="first" placeholder="John Doe" required/>
-					</div>
-          <div>
-						<label id="last">Nom</label>
-						<input type="text" name="last" id="last" placeholder="John Doe" required/>
-					</div>
-          <div>
-						<label id="email">Email</label>
-						<input type="email" name="email" id="email" placeholder="you@company.com" required/>
-					</div>
+  <title>Fisheye - photographe </title>
+</head>
 
-          <div>
-						<label for="message" class="">Your Message</label>
-						<textarea rows="10"  name="message" id="message" placeholder="Your Message" required></textarea>
-					</div>
-          <button id="btn-form">Envoyer</button>
-				</form>
-			</div>
-		</div>
-  </body>
+<body>
+  <header>
+    <img src="assets/images/logo.png" class="logo" />
+  </header>
+  <main id="main">
+    <div class="photograph-header">
+    </div>
+    <section class="landing-container">
+    </section>
+  </main>
+  <div id="contact_modal">
+    <div class="modal">
+      <header>
+        <h2 id="form-title">Contactez-moi</h2>
+        <img id="img-close" src="assets/icons/close.svg" />
+      </header>
+      <form id="form" method="POST" action="">
+        <div>
+          <label id="first">Prénom</label>
+          <input type="text" name="first" id="first" placeholder="John Doe" required />
+        </div>
+        <div>
+          <label id="last">Nom</label>
+          <input type="text" name="last" id="last" placeholder="John Doe" required />
+        </div>
+        <div>
+          <label id="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="you@company.com" required />
+        </div>
+
+        <div>
+          <label for="message" class="">Your Message</label>
+          <textarea rows="10" name="message" id="message" placeholder="Your Message" required></textarea>
+        </div>
+        <button id="btn-form">Envoyer</button>
+      </form>
+    </div>
+  </div>
+</body>
+
 </html>
