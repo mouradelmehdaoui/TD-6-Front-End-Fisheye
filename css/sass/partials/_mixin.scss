@@ -1,4 +1,29 @@
 @import './variables.scss';
+
+
+$breakpoints : ( //Breakpoints for the media queries    
+    mobile: 768px,
+    tablet: 992px,
+    laptop: 993px,
+    desktop: 1150px);
+
+//Mixins
+
+@mixin grid($rows: auto-fill, $columns: auto-fill, $gap: 0px) {
+    display: grid;
+    grid-template-rows: repeat($rows, 1fr);
+    grid-template-columns: repeat($columns, 1fr);
+    gap: $gap;
+}
+
+@mixin center-flex($gap: 0px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: $gap;
+}
+
 // mixin
 
 @mixin img-profil {
@@ -6,36 +31,90 @@
     width: 200px;
     border-radius: 50%;
     object-fit: cover;
-  }
+}
 
-  @mixin card-profil {
+@mixin card-profil {
     h2 {
-      color: #D3573C;
-      font-size: 36px;
-  }
+        color: #D3573C;
+        font-size: 36px;
+    }
 
-  h3 {
-      font-weight: 400;
-      font-size: 13px;
-      line-height: 17px;
-      color: $primary;
-      text-align: center;
-  }
+    h3 {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 17px;
+        color: $primary;
+        text-align: center;
+    }
 
-  p {
-      color: $secondary;
-      font-weight: 400;
-      font-size: 10px;
-      line-height: 13px;
-      text-align: center;
-  }
+    p {
+        color: $secondary;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 13px;
+        text-align: center;
+    }
 
-  span {
-      color: $tertiary;
-      font-weight: 400;
-      font-size: 9px;
-      line-height: 12px;
-      text-align: center
-  }
-  }
+    span {
+        color: $tertiary;
+        font-weight: 400;
+        font-size: 9px;
+        line-height: 12px;
+        text-align: center
+    }
+}
 
+@mixin center-flex-column($gap: 0px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $gap;
+}
+
+@mixin mobile-only {
+    @media screen and (max-width: map-get($breakpoints, mobile)) {
+        @content;
+    }
+}
+
+
+// Responsive 
+
+@mixin mobile-only {
+    @media screen and (max-width: map-get($breakpoints, mobile)) {
+        @content;
+    }
+}
+
+@mixin tablet-only {
+    @media screen and (min-width: map-get($breakpoints, mobile)) and (max-width: map-get($breakpoints, tablet)) {
+        @content;
+    }
+}
+
+@mixin laptop-only {
+    @media screen and (min-width: map-get($breakpoints, laptop)) and (max-width: map-get($breakpoints, desktop)) {
+        @content;
+    }
+}
+
+@mixin desktop-only {
+    @media screen and (min-width: map-get($breakpoints, desktop)) {
+        @content;
+    }
+}
+
+@mixin sort-element-styling {
+    background-color: var(--buttons-bg-color);
+    color: var(--buttons-color);
+
+    font-size: 16px;
+    text-align: left;
+
+    padding: 14px;
+
+    width: 170px;
+
+    border-radius: var(--buttons-border-radius);
+}

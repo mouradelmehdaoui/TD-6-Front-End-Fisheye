@@ -1,4 +1,42 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
+:root {
+  --body-bg-color: white;
+  --tab-shadow-color: rgb(228, 169, 59);
+  --buttons-color:white;
+  --buttons-color--hover:black;
+  --buttons-color--focus:black;
+  --buttons-bg-color:#901C1C;
+  --buttons-bg-color--hover:#DB8876;
+  --buttons-bg-color--active:#651414;
+  --buttons-bg-color--focus:#DB8876;
+  --text-color-primary:#D3573C;
+  --text-color-secondary:#901C1C;
+  --text-color-tertiary:black;
+  --text-color-quaternary:#757575;
+  --text-color-slogan:#525252;
+  --text-color-invoice:black;
+  --dialog-backdrop-bg-color:rgba(196, 196, 196, 0.4);
+  --dialog-bg-color:#DB8876;
+  --dialog-shadow-color:rgba(10, 10, 10, 0.3019607843);
+  --dialog-lightbox-backdrop-bg-color:#E5E5E5;
+  --input-message-color: white;
+  --input-bg-color--invalid: #430000;
+  --input-outline-color--invalid: #bc0f0f;
+  --input-bg-color--valid:#004300;
+  --input-outline-color--valid:limegreen;
+  --bg-color-primary:#D3573C;
+  --bg-color-secondary:#901C1C;
+  --bg-color-tertiary:black;
+  --bg-color-quaternary:#757575;
+  --scrollbar-bg-color:#f1f1f1;
+  --scrollbar-thumb-bg-color:#c1c1c1;
+  --scrollbar-thumb-bg-color--hover:#a8a8a8;
+  --scrollbar-thumb-bg-color--active:#787878;
+  --odd-card-bg-color: #f1f1f1;
+  --bg-color-likes-invoice: #DB8876;
+  --buttons-border-radius: 5px;
+}
+
 /*------------------------------------*\
     Settings
 \*------------------------------------*/
@@ -6,7 +44,8 @@
     NAV
 \*------------------------------------*/
 .nav {
-  float: left; /* Clear floats */
+  float: left;
+  /* Clear floats */
   width: 100%;
   margin-bottom: 1em;
   padding: 0 1em;
@@ -35,10 +74,12 @@
 
 /*--- DROPDOWN ---*/
 .nav__sub-menu {
-  background: rgba(255, 255, 255, 0); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
+  background: rgba(255, 255, 255, 0);
+  /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
   list-style: none;
   position: absolute;
-  left: -9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
+  left: -9999px;
+  /* Hide off-screen when not needed (this is more accessible than display:none;) */
 }
 
 .nav__sub-menu li {
@@ -46,18 +87,23 @@
 }
 
 .nav__sub-menu a {
-  white-space: nowrap; /* Stop text wrapping and creating multi-line dropdown items */
+  white-space: nowrap;
+  /* Stop text wrapping and creating multi-line dropdown items */
 }
 
-.nav li:hover ul { /* Display the dropdown on hover */
-  left: 0; /* Bring back on-screen when needed */
+.nav li:hover ul {
+  /* Display the dropdown on hover */
+  left: 0;
+  /* Bring back on-screen when needed */
 }
 
-.nav li:hover a { /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
+.nav li:hover a {
+  /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
   background: #2b2b2b;
 }
 
-.nav li:hover ul li a:hover { /* Here we define the most explicit hover states--what happens when you hover each individual link. */
+.nav li:hover ul li a:hover {
+  /* Here we define the most explicit hover states--what happens when you hover each individual link. */
   background: #444;
 }
 
@@ -178,4 +224,219 @@
   background-color: #901C1C;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.images {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 35px;
+}
+@media screen and (max-width: 768px) {
+  .images {
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    gap: 15px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .images {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1150px) {
+  .images {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-left: 25px;
+  }
+}
+@media screen and (min-width: 1150px) {
+  .images > * {
+    margin-left: 25px;
+  }
+}
+.images__sorter {
+  margin-left: 25px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 25px;
+}
+@media screen and (max-width: 768px) {
+  .images__sorter {
+    justify-content: center;
+    align-items: center;
+  }
+}
+.images__select-container {
+  position: relative;
+}
+.images__post-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+}
+@media screen and (max-width: 768px) {
+  .images__post-container:nth-child(odd) {
+    background-color: var(--odd-card-bg-color);
+  }
+}
+.images__post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  max-width: 350px;
+  transition: scale 350ms ease-out;
+}
+@media screen and (max-width: 768px) {
+  .images__post {
+    max-width: 75%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .images__post {
+    max-width: 350px;
+  }
+}
+.images__post:hover {
+  scale: 105%;
+}
+.images__post-container {
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+}
+@media screen and (max-width: 768px) {
+  .images__post-container {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .images__post-container {
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1150px) {
+  .images__post-container {
+    max-width: 100%;
+  }
+}
+.images__post-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 96%;
+}
+.images__post-description {
+  color: var(--bg-color-secondary);
+}
+.images__post-like-button {
+  color: var(--bg-color-secondary);
+  margin-right: 1px;
+}
+.images__image {
+  width: 350px;
+  height: 300px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  border-radius: var(--buttons-border-radius);
+}
+.images__video {
+  width: 350px;
+  height: 300px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: var(--buttons-border-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+}
+
+.dropdown-menu {
+  margin-top: -5px;
+  background-color: var(--buttons-bg-color);
+  width: 170px;
+  max-height: 170px;
+  border-radius: 0 0 var(--buttons-border-radius) var(--buttons-border-radius);
+}
+@media screen and (max-width: 768px) {
+  .dropdown-menu {
+    display: none;
+  }
+}
+.dropdown-menu__sort-button {
+  display: block;
+  background-color: var(--buttons-bg-color);
+  color: var(--buttons-color);
+  font-size: 16px;
+  text-align: left;
+  padding: 14px;
+  width: 170px;
+  border-radius: var(--buttons-border-radius);
+}
+@media screen and (max-width: 768px) {
+  .dropdown-menu__sort-button {
+    display: none;
+  }
+}
+.dropdown-menu__icon-container {
+  position: absolute;
+  right: 25px;
+  top: 18px;
+  transition: rotate 250ms ease-out;
+  aspect-ratio: 1/1;
+  height: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+}
+.dropdown-menu__icon {
+  font-size: 14px;
+  color: var(--buttons-color);
+  position: absolute;
+}
+.dropdown-menu__list {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.dropdown-menu__list-item {
+  padding-block: 14px;
+  width: 88%;
+  text-align: left;
+  border-top: 2px solid white;
+  color: var(--buttons-color);
+}
+.dropdown-menu__list-item:hover {
+  cursor: pointer;
+  background-color: var(--buttons-bg-color--hover);
+  color: var(--buttons-color--hover);
 }
