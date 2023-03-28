@@ -40,7 +40,7 @@ class MediasCard{
                 <div class="images__post">
     
                   <a href="#" title="${title}" aria-label="Video nommée ${title}" role="link" tabindex="0">
-                    <video src="../assets/images/Posts photos/${video}" class="images__video">
+                    <video src="../assets/images/medias/${video}" class="images__video">
                     </video>
                   </a>
                   <div class="images__post-text">

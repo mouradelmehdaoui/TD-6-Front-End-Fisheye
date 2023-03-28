@@ -9,11 +9,11 @@ $breakpoints : ( //Breakpoints for the media queries
 
 //Mixins
 
-@mixin grid($rows: auto-fill, $columns: auto-fill, $gap: 0px) {
+@mixin grid($gap: 0px) {
     display: grid;
-    grid-template-rows: repeat($rows, 1fr);
-    grid-template-columns: repeat($columns, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
     gap: $gap;
+    margin-top: 100px;
 }
 
 @mixin center-flex($gap: 0px) {
@@ -106,8 +106,8 @@ $breakpoints : ( //Breakpoints for the media queries
 }
 
 @mixin sort-element-styling {
-    background-color: var(--buttons-bg-color);
-    color: var(--buttons-color);
+    background-color: $buttons-bg-color;
+    color: $buttons-color;
 
     font-size: 16px;
     text-align: left;
@@ -116,5 +116,5 @@ $breakpoints : ( //Breakpoints for the media queries
 
     width: 170px;
 
-    border-radius: var(--buttons-border-radius);
+    border-radius: $buttons-border-radius;
 }
