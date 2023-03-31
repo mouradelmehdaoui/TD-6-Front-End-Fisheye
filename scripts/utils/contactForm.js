@@ -15,13 +15,11 @@ const cursorClose = document.getElementById('img-close')
 const btnContact = document.querySelector('.btn-contact')
 const form = document.getElementById("form");
 
-
-
 // fonctions ecouteurs d'evenements
-
-
 btnContact.addEventListener("click", displayModal, false)
 cursorClose.addEventListener("click", closeModal, false)
+
+// function formContact
 
 form.addEventListener("submit", function (e) {
   const formData = new FormData(form);

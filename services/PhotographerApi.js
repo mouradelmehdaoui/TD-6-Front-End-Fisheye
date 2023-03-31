@@ -37,7 +37,7 @@ class PhotographerApi extends Api {
         if (id == 0) {
             return of(this.getDefaultHPhotographer())
         }
-        return photographers.filter(user => user.id == id)
+        return photographers.find(user => user.id == id)
     }
 
     getDefaultHPhotographer() {

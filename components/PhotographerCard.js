@@ -35,8 +35,7 @@ class PhotographerCard{
   createProfile() {
     let profileTemplate = "";
 
-    const { name, city, country, tagline, portrait } = this.cards[0];
-
+    const { name, city, country, tagline, portrait } = this.cards;
     profileTemplate = `
          <section class="profile-container" >
         <div class="profile-card-container">

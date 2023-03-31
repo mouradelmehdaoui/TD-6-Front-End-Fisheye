@@ -1,10 +1,10 @@
+
 const Landing = () => {
-   
-    landingContainer = document.querySelector(".landing-container");
 
+  landingContainer = document.querySelector(".landing-container");
 
-    return landingContainer.innerHTML =
-        `      <div class="images__sorter">
+  landingContainer.innerHTML =
+    `      <div class="images__sorter">
         <label for="select" class="label">Trier par:</label>
         <div class="images__select-container">
 

@@ -8,7 +8,6 @@ class MediasCard{
         let postTemplate = "";
         let postsCards = "";
     
-        
         for (let card of this.cards) {
           const { id, photographerId, title, image, video, likes, date } = card;
           if (image) {
@@ -40,7 +39,7 @@ class MediasCard{
                 <div class="images__post">
     
                   <a href="#" title="${title}" aria-label="Video nommée ${title}" role="link" tabindex="0">
-                    <video src="../assets/images/medias/${video}" class="images__video">
+                    <video src="../assets/images/medias/${this.photographerName}/${video}" class="images__video">
                     </video>
                   </a>
                   <div class="images__post-text">

@@ -12,13 +12,12 @@ class PhotographerApp {
             const id = params.get('id');
             const photographer = await this.PhotographerApi.getPhotographersById(id);
             const mediasPhotographer = await this.MediasApi.getMediasById(id);
-            const photographerName = photographer[0].name.substring(0, photographer[0].name.indexOf(' '));
+            const photographerFullName = photographer.name.split(' ');
+            const photographerName = photographerFullName.shift()
 
             this.$cardsContainer.innerHTML = new PhotographerCard(photographer).createProfile()
             const postsContainer = document.querySelector(".images")
 
-            console.log(mediasPhotographer);
-            console.log(photographerName);
             PhotographerApp.createCard(mediasPhotographer, postsContainer, photographerName);
 
         })
@@ -34,6 +33,7 @@ class PhotographerApp {
     }
 }
 
+ 
 
 const photographer = new PhotographerApp()
 

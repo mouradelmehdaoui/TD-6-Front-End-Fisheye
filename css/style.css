@@ -316,7 +316,7 @@
 }
 .dropdown-menu__icon {
   font-size: 14px;
-  color: var(--buttons-color);
+  color: white;
   position: absolute;
 }
 .dropdown-menu__list {
