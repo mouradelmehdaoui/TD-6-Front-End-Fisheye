@@ -24,9 +24,10 @@ class MediasCard{
                   </a>
                   <div class="images__post-text">
                     <p class="images__post-description" tabindex="0">${title}</p>
-                    <button class="images__post-like-button" title="Mettre un like au post '${title}'?" aria-pressed="false"
-                      aria-label="Bouton pour liker la publication nommée '${title}'" tabindex="0">${likes} <i
-                        class="fa-solid fa-heart"></i></button>
+                    <i class="fa-solid fa-heart"><button class="images__post-like-button" title="Mettre un like au post '${title}'?" aria-pressed="false"
+                      aria-label="Bouton pour liker la publication nommée '${title}'" tabindex="0">${likes} 
+                      
+                      </button></i>
                   </div>
                 </div>
               </div>
@@ -46,9 +47,9 @@ class MediasCard{
                   </a>
                   <div class="images__post-text">
                     <p class="images__post-description" tabindex="0">${title}</p>
-                    <button class="images__post-like-button" title="Mettre un like au post '${title}'?" aria-pressed="false"
-                      aria-label="Bouton pour liker la publication nommée '${title}'" tabindex="0">${likes} <i
-                        class="fa-solid fa-heart"></i></button>
+                    <i class="fa-solid fa-heart"><button class="images__post-like-button" title="Mettre un like au post '${title}'?" aria-pressed="false"
+                      aria-label="Bouton pour liker la publication nommée '${title}'" tabindex="0">${likes}
+                      </button></i>
                   </div>
     
                 </div>
