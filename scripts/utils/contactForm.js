@@ -1,5 +1,8 @@
+
+console.log('je suis dans script pour forumulaire');
+
 const contactModal = document.getElementById("contact_modal");
-const modalBtn = document.querySelector(".modal_btn");
+const modalBtn = document.querySelector(".btn-contact");
 const validBtn = document.querySelector(".valid_btn");
 const closeBtn = document.querySelector(".close_btn");
 

@@ -10,6 +10,8 @@ class Api {
     }
 
     async getAll() {
+
+        console.log('je suis service phographer Api');
         return fetch(this._url)
             .then(res => res.json())
             .then(res => 
@@ -104,7 +106,7 @@ class MediasApi extends Api {
               }
               case "popularity": {
                 sortedArray = mediasPhotographer.sort((valueA, valueB) => {
-                  return valueA.likes - valueB.likes;
+                  return valueB.likes - valueA.likes;
                 });
                 break;
               }

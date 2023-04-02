@@ -4,6 +4,8 @@ class PhotographerCard{
   }
 
   createCards() {
+
+    console.log('je suis ds createCard photographerCard');
     let photographerTemplate = "";
     let photographerCards = "";
 
@@ -33,6 +35,8 @@ class PhotographerCard{
   }
 
   createProfile() {
+
+    console.log('je suis createProfile PhotographerCard.js');
     let profileTemplate = "";
 
     const { name, city, country, tagline, portrait } = this.cards;
@@ -45,6 +49,7 @@ class PhotographerCard{
             <h3 class="profile-slogan" >${tagline}</h3>
           </div>
         </div>
+        <button class="btn-contact" aria-hidden="true" aria-label="Contact Me">Contactez-moi</button>
         <div class="profile-contact">
         <div class="profile-img-container">
           <img src="./assets/photographers/${portrait}"

@@ -1,5 +1,14 @@
 const formContact = () => {
 
+  // algo pour permettre chargement de cette page en dernier des fichiers .js
+  var script = document.createElement('script');
+  script.src = "../scripts/utils/contactForm.js";
+  script.async = true;
+  document.head.appendChild(script);
+
+
+  console.log('je suis ds Form');
+
     formContainer = document.getElementById("form");
   
     formContainer.innerHTML =

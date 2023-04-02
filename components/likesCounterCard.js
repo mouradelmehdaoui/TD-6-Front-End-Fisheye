@@ -1,11 +1,11 @@
 const likesCounterCard = (price, medias) => {
 
+
+  console.log('je suis ds likesCount');
     const totalyLikes = medias.reduce(function (accumulator, media) {
         return accumulator + media.likes;
       }, 0);
 
-    console.log(totalyLikes);
-    
     const likesCounterCard = document.getElementById("total-card");
     likesCounterCard.innerHTML =
     `

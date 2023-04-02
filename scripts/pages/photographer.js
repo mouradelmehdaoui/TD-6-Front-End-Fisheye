@@ -7,7 +7,13 @@ class PhotographerApp {
 
   async main() {
 
+    console.log('je suis Main photographer.js');
+
     window.addEventListener('load', async () => {
+
+
+      console.log('je suis addevent choper Id apres clicque photographer.js');
+
       const params = (new URL(document.location)).searchParams;
       const id = params.get('id');
       const photographer = await this.PhotographerApi.getPhotographersById(id);
@@ -22,12 +28,14 @@ class PhotographerApp {
 
       this.MediasApi.sortMedias(medias, postsContainer, photographerName)
 
-      console.log(medias);
+
+      formContact()
       likesCounterCard(photographer.price, medias)
+ 
     })
 
     landing()
-    formContact()
+   
 
   }
 
