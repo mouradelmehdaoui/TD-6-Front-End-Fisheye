@@ -46,9 +46,6 @@ class PhotographerCard{
           </div>
         </div>
         <div class="profile-contact">
-          <button type="button" class="btn-contact" 
-            aria-label="Bouton pour ouvrir la boîte modale pour contacter le photographe">Contactez-moi</button>
-        </div>
         <div class="profile-img-container">
           <img src="./assets/photographers/${portrait}"
             alt="Photo de profil du compte de: ${name}" class="profile-image"" />

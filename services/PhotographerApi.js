@@ -69,7 +69,6 @@ class MediasApi extends Api {
     async getMediasById(id) {
         const  medias  = await this.getAllMedias()
 
-        console.log(medias);
         if (id == 0) {
             return of(this.getDefaultMedias())
         }
@@ -87,6 +86,39 @@ class MediasApi extends Api {
             price: '',
             portrait: ''
         }
+    }
+
+    sortMedias(mediasPhotographer, postsContainer, photographerName) {
+        
+        const sortDropdown = document.querySelector(".sort-dropdown");
+        sortDropdown.addEventListener("change", () => {
+            const sortOption = sortDropdown.value;
+      
+            let sortedArray = [];
+            switch (sortOption) {
+              case "title": {
+                sortedArray = mediasPhotographer.sort((valueA, valueB) => {
+                  return valueA.title.localeCompare(valueB.title);
+                });
+                break;
+              }
+              case "popularity": {
+                sortedArray = mediasPhotographer.sort((valueA, valueB) => {
+                  return valueA.likes - valueB.likes;
+                });
+                break;
+              }
+              case "date": {
+                sortedArray = mediasPhotographer.sort((valueA, valueB) => {
+                  return valueA.date - valueB.date;
+                });
+                break;
+              }
+            }
+            
+            PhotographerApp.createCard(mediasPhotographer, postsContainer, photographerName);
+          });
+
     }
 
 }

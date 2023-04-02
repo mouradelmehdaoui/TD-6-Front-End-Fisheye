@@ -2,18 +2,19 @@
 <html>
 
 <head>
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
-  <meta charset="utf-8">
   <link rel="icon" type="image/png" href="assets/favicon.png">
+  <!-- CSS -->
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <script src="https://kit.fontawesome.com/904e9ee361.js" crossorigin="anonymous"></script>
+  <meta charset="utf-8">
+
   <!-- Templates   -->
-  <script src="services/PhotographerApi.js" defer></script>
-  <script src="components/PhotographerCard.js" defer></script>
-  <script src="components/Landing.js" defer></script>
-  <script src="components/MediasCard.js" defer></script>
-  <script src="/scripts/pages/photographer.js" defer></script>
-  <script src="/scripts/utils/contactForm.js" defer></script>
-  <script src="/scripts/utils/function.js" defer></script>
+
+
   <title>Fisheye - photographe </title>
 </head>
 
@@ -22,6 +23,7 @@
     <img src="assets/images/logo.png" class="logo" />
   </header>
   <main id="main">
+    <button class="modal_btn open_btn" aria-hidden="true" aria-label="Contact Me">Contactez-moi</button>
     <div class="photograph-header">
     </div>
     <section class="landing-container">
@@ -29,34 +31,37 @@
     <section class="images">
     </section>
   </main>
-  <div id="contact_modal">
+  <div id="total-card">
+  </div>
+  <div id="contact_modal" role="dialog" aria-hidden="true">
     <div class="modal">
       <header>
-        <h2 id="form-title">Contactez-moi</h2>
-        <img id="img-close" src="assets/icons/close.svg" />
+        <h2>Contactez-moi</h2>
+        <img src="assets/icons/close.svg" class="close_btn" alt="Close Contact Form" aria-label="Close Contact Form">
       </header>
-      <form id="form" method="POST" action="">
-        <div>
-          <label id="first">Prénom</label>
-          <input type="text" name="first" id="first" placeholder="John Doe" required />
-        </div>
-        <div>
-          <label id="last">Nom</label>
-          <input type="text" name="last" id="last" placeholder="John Doe" required />
-        </div>
-        <div>
-          <label id="email">Email</label>
-          <input type="email" name="email" id="email" placeholder="you@company.com" required />
-        </div>
-
-        <div>
-          <label for="message" class="">Your Message</label>
-          <textarea rows="10" name="message" id="message" placeholder="Your Message" required></textarea>
-        </div>
-        <button id="btn-form">Envoyer</button>
+      <form name="contact" id="form" novalidate>
       </form>
     </div>
   </div>
+
+
+  <script src="services/PhotographerApi.js"></script>
+
+  <script src="components/PhotographerCard.js"></script>
+
+  <script src="components/landing.js"></script>
+
+  <script src="components/MediasCard.js"></script>
+
+  <script src="components/form.js"></script>
+  <script src="components/likesCounterCard.js"></script>
+
+  <script src="/scripts/pages/photographer.js"></script>
+
+
+  <script src="/scripts/utils/contactForm.js"></script>
+  <script src="/scripts/utils/LightBox.js"></script>
+
 </body>
 
 </html>
