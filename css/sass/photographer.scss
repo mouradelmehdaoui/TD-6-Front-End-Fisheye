@@ -166,7 +166,7 @@
 
         @include mobile-only {
             &:nth-child(odd) {
-                background-color: var(--odd-card-bg-color);
+                background-color: $odd-card-bg-color;
             }
         }
     }
@@ -217,15 +217,11 @@
     }
 
     &__post-description {
-        color: var(--bg-color-secondary);
+        color: $bg-color-secondary;
     }
 
-    .fa-heart {
-        display: flex;
-    flex-direction: row-reverse
-    }
     &__post-like-button {
-        color: var(--bg-color-secondary);
+        color: $bg-color-secondary;
         margin-right: 1px;
     }
 
@@ -466,6 +462,12 @@
     }
   }
   
+  .active-like {
+    color: $bg-color-liked !important;
+    .fa-heart {
+      color: $bg-color-liked !important;
+    }
+}
 
 // nav .drop-down {
 //     list-style: none;

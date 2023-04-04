@@ -1,20 +1,20 @@
-class MediasCard{
-    constructor(cards, photographerName) {
-      this.cards = cards;
-      this.photographerName = photographerName;
-    }
-    
-    createPosts() {
+class MediasCard {
+  constructor(cards, photographerName) {
+    this.cards = cards;
+    this.photographerName = photographerName;
+  }
 
-      console.log('je suis dans createPosts MEdiasCards');
-        let postTemplate = "";
-        let postsCards = "";
-    
-        for (let card of this.cards) {
-          const { id, photographerId, title, image, video, likes, date } = card;
-          if (image) {
-            //If the image is defined
-            postTemplate = `
+  createPosts() {
+
+    console.log('je suis dans createPosts MEdiasCards');
+    let postTemplate = "";
+    let postsCards = "";
+
+    for (let card of this.cards) {
+      const { id, photographerId, title, image, video, likes, date } = card;
+      if (image) {
+        //If the image is defined
+        postTemplate = `
             <div class="images__post-container" data-post-id="${id}" data-photographers-id="${photographerId}"
                 data-publishing-date="${date}" data-likes="${likes}" data-user-liked="false" data-title="${title}">
                 <div class="images__post">
@@ -24,17 +24,16 @@ class MediasCard{
                   </a>
                   <div class="images__post-text">
                     <p class="images__post-description" tabindex="0">${title}</p>
-                    <i class="fa-solid fa-heart"><button class="images__post-like-button" title="Mettre un like au post '${title}'?" aria-pressed="false"
-                      aria-label="Bouton pour liker la publication nommée '${title}'" tabindex="0">${likes} 
-                      
-                      </button></i>
+                    <button class="images__post-like-button" title="Mettre un like au post '${title}'?" aria-pressed="false"
+                aria-label="Bouton pour liker la publication nommée '${title}'" tabindex="0">${likes} <i
+                  class="fa-regular fa-heart"></i></button>
                   </div>
                 </div>
               </div>
     
                     `;
-          } else {
-            postTemplate = `
+      } else {
+        postTemplate = `
                 
                <div class="images__post-container" data-post-id="${id}" data-photographers-id="${photographerId}"
                 data-publishing-date="${date}" data-likes="${likes}" data-user-liked="false" data-title="${title}">
@@ -47,21 +46,20 @@ class MediasCard{
                   </a>
                   <div class="images__post-text">
                     <p class="images__post-description" tabindex="0">${title}</p>
-                    <i class="fa-solid fa-heart"><button class="images__post-like-button" title="Mettre un like au post '${title}'?" aria-pressed="false"
-                      aria-label="Bouton pour liker la publication nommée '${title}'" tabindex="0">${likes}
-                      </button></i>
+                    <button class="images__post-like-button" title="Mettre un like au post '${title}'?" aria-pressed="false"
+                aria-label="Bouton pour liker la publication nommée '${title}'" tabindex="0" >${likes} <i
+                  class="fa-regular fa-heart"></i></button>
                   </div>
     
                 </div>
               </div>
     
                     `;
-          }
-    
-          postsCards += postTemplate;
-        }
-    
-        return postsCards;
       }
+
+      postsCards += postTemplate;
+    }
+
+    return postsCards;
   }
-  
+}

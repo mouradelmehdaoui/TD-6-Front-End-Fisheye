@@ -182,7 +182,7 @@
 }
 @media screen and (max-width: 768px) {
   .images__post-container:nth-child(odd) {
-    background-color: var(--odd-card-bg-color);
+    background-color: #f1f1f1;
   }
 }
 .images__post {
@@ -243,14 +243,10 @@
   width: 96%;
 }
 .images__post-description {
-  color: var(--bg-color-secondary);
-}
-.images .fa-heart {
-  display: flex;
-  flex-direction: row-reverse;
+  color: #901C1C;
 }
 .images__post-like-button {
-  color: var(--bg-color-secondary);
+  color: #901C1C;
   margin-right: 1px;
 }
 .images__image {
@@ -477,4 +473,11 @@ form input {
   height: 68px;
   border: none;
   border-radius: 5px;
+}
+
+.active-like {
+  color: #901C1C !important;
+}
+.active-like .fa-heart {
+  color: #901C1C !important;
 }
