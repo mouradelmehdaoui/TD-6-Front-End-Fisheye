@@ -95,7 +95,7 @@ class MediasApi extends Api {
         const sortDropdown = document.querySelector(".sort-dropdown");
         sortDropdown.addEventListener("change", () => {
             const sortOption = sortDropdown.value;
-      
+
             let sortedArray = [];
             switch (sortOption) {
               case "title": {

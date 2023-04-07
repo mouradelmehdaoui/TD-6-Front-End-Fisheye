@@ -21,6 +21,7 @@ class PhotographerApp {
       const photographerFullName = photographer.name.split(' ');
       const photographerName = photographerFullName.shift()
 
+
       this.$cardsContainer.innerHTML = new PhotographerCard(photographer).createProfile()
       const postsContainer = document.querySelector(".images")
 
@@ -46,9 +47,6 @@ class PhotographerApp {
     ).createPosts();
   }
 
-  static likeHeart(likes) {
-
-  }
 
 }
 

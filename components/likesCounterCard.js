@@ -21,13 +21,13 @@ const likesCounterCard = (price, medias) => {
       totalyLikes--
       el.classList.remove("active-like")
       totalPrice.textContent = totalyLikes;
-      el.innerHTML = `${medias[index].likes -= 1} <i
+      el.innerHTML = `${--medias[index].likes} <i
       class="fa-regular fa-heart"></i>`
     } else {
       totalyLikes++
       el.classList.add("active-like")
       totalPrice.textContent = totalyLikes;
-      el.innerHTML = `${medias[index].likes +=  1} <i
+      el.innerHTML = `${++medias[index].likes} <i
       class="fa-solid fa-heart"></i>`
     }
   }
