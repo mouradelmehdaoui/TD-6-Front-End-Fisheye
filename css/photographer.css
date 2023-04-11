@@ -158,21 +158,6 @@
     margin-left: 25px;
   }
 }
-.images__sorter {
-  margin-left: 25px;
-  display: flex;
-  justify-content: flex-start;
-  gap: 25px;
-}
-@media screen and (max-width: 768px) {
-  .images__sorter {
-    justify-content: center;
-    align-items: center;
-  }
-}
-.images__select-container {
-  position: relative;
-}
 .images__post-container {
   display: flex;
   flex-direction: column;

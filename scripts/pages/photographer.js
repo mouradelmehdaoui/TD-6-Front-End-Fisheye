@@ -7,12 +7,9 @@ class PhotographerApp {
 
   async main() {
 
-    console.log('je suis Main photographer.js');
+    console.log('je suis dans PHotographerApp Main');
 
     window.addEventListener('load', async () => {
-
-
-      console.log('je suis addevent choper Id apres clicque photographer.js');
 
       const params = (new URL(document.location)).searchParams;
       const id = params.get('id');
@@ -26,8 +23,10 @@ class PhotographerApp {
       const postsContainer = document.querySelector(".images")
 
       PhotographerApp.createCard(medias, postsContainer, photographerName);
-
       this.MediasApi.sortMedias(medias, postsContainer, photographerName)
+
+      console.log(photographerName);
+      PhotographerApp.createCarrousel(medias, photographer, photographerName)
 
 
       formContact()
@@ -47,17 +46,14 @@ class PhotographerApp {
     ).createPosts();
   }
 
+  static createCarrousel(medias, photographer, photographerName) {
+    const carrousel = new Carrousel(medias, photographer, photographerName)
+    carrousel.init()
+  }
 
 }
 
-
 const photographer = new PhotographerApp()
-
 photographer.main()
-
-
-
-
-
 
 

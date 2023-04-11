@@ -482,6 +482,71 @@ form input {
   color: #901C1C !important;
 }
 
+.dropdown-menu {
+  margin-top: -5px;
+  background-color: var(--buttons-bg-color);
+  width: 170px;
+  max-height: 170px;
+  border-radius: 0 0 var(--buttons-border-radius) var(--buttons-border-radius);
+}
+@media screen and (max-width: 768px) {
+  .dropdown-menu {
+    display: none;
+  }
+}
+.dropdown-menu__sort-button {
+  display: block;
+  background-color: #901C1C;
+  color: white;
+  font-size: 16px;
+  text-align: left;
+  padding: 14px;
+  width: 170px;
+  border-radius: 5px;
+}
+@media screen and (max-width: 768px) {
+  .dropdown-menu__sort-button {
+    display: none;
+  }
+}
+.dropdown-menu__icon-container {
+  position: absolute;
+  right: 25px;
+  top: 18px;
+  transition: rotate 250ms ease-out;
+  aspect-ratio: 1/1;
+  height: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+}
+.dropdown-menu__icon {
+  font-size: 14px;
+  color: var(--buttons-color);
+  position: absolute;
+}
+.dropdown-menu__list {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.dropdown-menu__list-item {
+  padding-block: 14px;
+  width: 88%;
+  text-align: left;
+  border-top: 2px solid white;
+  color: var(--buttons-color);
+}
+.dropdown-menu__list-item:hover {
+  cursor: pointer;
+  background-color: var(--buttons-bg-color--hover);
+  color: var(--buttons-color--hover);
+}
+
 /****** Elad Shechter's RESET *******/
 /*** box sizing border-box for all elements ***/
 *,

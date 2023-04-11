@@ -62,4 +62,6 @@ class MediasCard {
 
     return postsCards;
   }
+
+
 }

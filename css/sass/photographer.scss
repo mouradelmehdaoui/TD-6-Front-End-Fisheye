@@ -144,23 +144,6 @@
 
     margin-top: 35px;
 
-    &__sorter {
-        margin-left: 25px;
-        display: flex;
-        justify-content: flex-start;
-        gap: 25px;
-
-        @include mobile-only {
-            justify-content: center;
-            align-items: center
-        }
-    }
-
-    &__select-container {
-        //Relative to the icon container, line: 570
-        position: relative;
-    }
-
     &__post-container {
         @include center-flex-column;
 
@@ -468,6 +451,7 @@
       color: $bg-color-liked !important;
     }
 }
+
 
 // nav .drop-down {
 //     list-style: none;

@@ -6,13 +6,10 @@ const formContact = () => {
   script.async = true;
   document.head.appendChild(script);
 
+  formContainer = document.getElementById("form");
 
-  console.log('je suis ds Form');
-
-    formContainer = document.getElementById("form");
-  
-    formContainer.innerHTML =
-      ` 
+  formContainer.innerHTML =
+    ` 
           <div
             class="formData">
             <label for="first">Prénom</label><br>
@@ -60,5 +57,4 @@ const formContact = () => {
           </div>
           <button class="modal_btn valid_btn" aria-hidden="true" aria-label="Send">Envoyer</button>
     </div>`
-  }
-  
+}

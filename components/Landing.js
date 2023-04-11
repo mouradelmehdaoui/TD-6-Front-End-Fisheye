@@ -1,8 +1,6 @@
 
 const landing = () => {
 
-  console.log('je suis ds landing');
-
   landingContainer = document.querySelector(".landing-container");
 
   landingContainer.innerHTML =
