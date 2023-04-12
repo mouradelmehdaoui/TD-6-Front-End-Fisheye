@@ -29,7 +29,7 @@ class PhotographerApp {
       PhotographerApp.createCarrousel(medias, photographer, photographerName)
 
 
-      formContact()
+      formContact(photographer)
       likesCounterCard(photographer.price, medias)
  
     })

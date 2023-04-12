@@ -1,0 +1,25 @@
+@import "./variables";
+@import "./mixin";
+
+.button {
+    padding: 19px 23px;
+    font-size: 18px;
+    background-color: $buttons-bg-color;
+    color: $buttons-color;
+
+    &:hover {
+        background-color: $buttons-bg-color--hover;
+        color: $buttons-color--hover;
+
+    }
+
+    &:focus {
+        background-color: $buttons-bg-color--focus;
+        color: $buttons-color--focus;
+    }
+
+
+    &--rounded {
+        border-radius: $buttons-border-radius;
+    }
+}

@@ -1,17 +1,17 @@
 
-const contactModal = document.getElementById("contact_modal");
+const contactModal = document.querySelector(".contact__modal");
 const modalBtn = document.querySelector(".btn-contact");
-const validBtn = document.querySelector(".valid_btn");
-const closeBtn = document.querySelector(".close_btn");
+const validBtn = document.querySelector(".contact__submit-button");
+const closeBtn = document.querySelector(".contact__button-close-dialog");
 
-const first = document.getElementById("first");
-const firstError = document.getElementById("error_first");
-const last = document.getElementById("last")
-const lastError = document.getElementById("error_last");
+const first = document.getElementById("first-name");
+const firstError = document.getElementById("first-name-error");
+const last = document.getElementById("last-name")
+const lastError = document.getElementById("last-name-error");
 const email = document.getElementById("email");
-const emailError = document.getElementById("error_email");
+const emailError = document.getElementById("email-error");
 const message = document.getElementById("message");
-const messageError = document.getElementById("error_message");
+const messageError = document.getElementById("message-error");
 
 modalBtn.addEventListener("click", displayModal);
 closeBtn.addEventListener("click", closeModal);

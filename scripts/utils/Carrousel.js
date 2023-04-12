@@ -134,7 +134,6 @@ class Carrousel {
           const str = event.target.ariaLabel
           this.title = str.substring(str.indexOf(" ") + 8)
 
-          console.log(this.title);
           let mediaType = str.trim().split(' ').shift();
           
           if(mediaType === 'Video' || mediaType === 'Image') {
