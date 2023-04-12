@@ -11,6 +11,7 @@ class Carrousel {
     this.mediaList = document.querySelectorAll('.images__image, .images__video');
     this.generateModal()
     this.hide()
+    this.title = "";
 
   }
 
@@ -79,7 +80,6 @@ class Carrousel {
 
     this.modal.style.display = "block";
     this.modal.setAttribute('aria-hidden', 'false');
-
     this.isOpen = true;
 
   }
@@ -125,34 +125,41 @@ class Carrousel {
     this.updateMedia(this.galleryIndex);
   }
 
-  keyboardNav() {
-
-    this.mediaList.forEach((media, index) => {
-
-     
-      media.addEventListener('keydown', (event) => {
-
-        console.log('je suis pas la');
-
-        if (event.key === 'Enter' ) {
-          
-          alert('je suis dans media keydown');
-        }   
+  getCarrousel() {
+    
+      document.addEventListener('keydown', (event) => {
         
-      }); 
-    });
+        if (event.key === 'Enter') {
+          
+          const str = event.target.ariaLabel
+          this.title = str.substring(str.indexOf(" ") + 8)
 
+          console.log(this.title);
+          let mediaType = str.trim().split(' ').shift();
+          
+          if(mediaType === 'Video' || mediaType === 'Image') {
+
+            const mediaIndex = this.mediasData.findIndex(media => media.title === this.title);
+                this.show();
+                this.updateMedia(mediaIndex);
+          }
+        }
+    }); 
+
+
+      this.mediaList.forEach((media, index) => {
+        media.addEventListener('click', () => {
+          const mediaIndex = index
+          this.updateMedia(mediaIndex);
+          this.show();
+        });
+      });   
+    
   }
   init() {
     
-    this.mediaList.forEach((media, index) => {
-      media.addEventListener('click', () => {
-        const mediaIndex = index
-        this.updateMedia(mediaIndex);
-        this.show();
-      });
-    });
-    this.keyboardNav();
+    this.getCarrousel()
+    
   }
 
 }

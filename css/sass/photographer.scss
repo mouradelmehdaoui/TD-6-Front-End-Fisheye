@@ -2,381 +2,11 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
 
 .photograph-header {
-    background-color: #FAFAFA;
-    height: 300px;
-    margin: 0 100px;
+  background-color: #FAFAFA;
+  height: 300px;
+  margin: 0 100px;
 
-    .btn-contact {
-        font-size: 20px;
-        font-weight: bold;
-        color: white;
-        padding: 11px;
-        width: 170px;
-        height: 70px;
-        border: none;
-        background-color: $primary;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .profile-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        height: 300px;
-    }
-
-    .profile-card-container {
-        @include card-profil();
-    }
-
-    .profile-img-container {
-        img {
-            @include img-profil();
-        }
-
-    }
-}
-
-#contact_modal {
-    display: none;
-
-    .modal {
-        border-radius: 5px;
-        background-color: #DB8876;
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        padding: 35px;
-        margin: auto;
-
-        header {
-            justify-content: space-between;
-            width: 100%;
-
-            img {
-                cursor: pointer;
-            }
-
-            h2 {
-                font-size: 64px;
-                font-weight: normal;
-                text-align: center;
-            }
-
-        }
-
-        form {
-            display: flex;
-            width: 100%;
-            flex-direction: column;
-            align-items: flex-start;
-
-            div {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                align-items: self-start;
-                margin-bottom: 26px;
-
-                label {
-                    color: #312E2E;
-                    font-size: 36px;
-                }
-            }
-
-            input,
-            textarea {
-                width: 100%;
-                height: 68px;
-                border: none;
-                border-radius: 5px;
-            }
-
-            #btn-form {
-                font-size: 20px;
-                font-weight: bold;
-                color: white;
-                padding: 11px;
-                width: 170px;
-                height: 70px;
-                border: none;
-                background-color: #901C1C;
-                border-radius: 5px;
-                cursor: pointer;
-            }
-        }
-    }
-}
-
-
-/*------------------------------------*\
-   card-images
-\*------------------------------------*/
-
-.images {
-    @include grid(25px);
-
-    @include mobile-only {
-
-        @include grid(15px);
-    }
-
-    @include tablet-only {
-
-
-        @include grid(15px)
-    }
-
-    @include laptop-only {
-        @include grid(15px);
-        margin-left: 25px;
-    }
-
-    @include desktop-only {
-        &>* {
-            margin-left: 25px;
-        }
-
-    }
-
-    margin-top: 35px;
-
-    &__post-container {
-        @include center-flex-column;
-
-        @include mobile-only {
-            &:nth-child(odd) {
-                background-color: $odd-card-bg-color;
-            }
-        }
-    }
-
-    &__post {
-        @include center-flex-column;
-        max-width: 350px;
-
-        @include mobile-only {
-            max-width: 75%;
-        }
-
-        @include tablet-only {
-            max-width: 350px;
-        }
-
-        transition: scale 350ms ease-out;
-
-        &:hover {
-            scale: 105%;
-        }
-    }
-
-    &__post-container {
-        max-width: 350px;
-        @include center-flex-column;
-
-        @include mobile-only {
-            width: 100%;
-            max-width: 100%;
-            @include center-flex;
-        }
-
-        @include tablet-only {
-            max-width: 100%;
-        }
-
-        @include laptop-only {
-            max-width: 100%;
-        }
-    }
-
-    &__post-text {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 96%;
-    }
-
-    &__post-description {
-        color: $bg-color-secondary;
-    }
-
-    &__post-like-button {
-        color: $bg-color-secondary;
-        margin-right: 1px;
-    }
-
-    &__image {
-        width: 350px;
-        height: 300px;
-        -o-object-fit: cover;
-        object-fit: cover;
-        -o-object-position: center;
-        object-position: center;
-        border-radius: var(--buttons-border-radius);
-    }
-
-    &__video {
-        width: 350px;
-        height: 300px;
-        -o-object-fit: cover;
-        object-fit: cover;
-        border-radius: var(--buttons-border-radius);
-        @include center-flex-column;
-    }
-
-}
-
-
-/*------------------------------------*\
-   DROPDOWN
-\*------------------------------------*/
-
-.sort-container {
-    margin: 20px 0 20px 100px;
-  }
-  
-  .sort-button {
-    padding: 0;
-    margin-right: 10px;
-    border: none;
-    background: none;
-  }
-  
-  .sort-dropdown {
-    font-size: 12px;
-    font-weight: bold;
-    color: white;
-    padding: 11px;
-    border: none;
-    background-color: #901C1C;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: auto;
-  
-    option {
-      cursor: pointer;
-    }
-  }
-
-  /*------------------------------------*\
-   Card Likes Total
-\*------------------------------------*/
-  #total-card {
-    position: fixed;
-    bottom: 0;
-    right: 2%;
-    padding: 10px 25px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: baseline;
-    color: #000000;
-    background-color: #DB8876;
-    font-size: 22px;
-    border-radius: 5px 5px 0 0;
-  
-    i {
-      margin-right: 20px;
-      color: #000000;
-      margin-left: 5px;
-    }
-  }
-
-
-
-/*------------------------------------*\
-   Caroussel Modal
-\*------------------------------------*/
-  .lightbox-modal {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    width: 2000px;
-    height: 100%;
-    margin: auto;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .lightbox-content {
-    z-index: 1000;
-    width: 1200px;
-    height: 100%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 50px;
-    margin-right: 50px;
-  }
-  
-  .prev-btn {
-    border: none;
-    background: url(../assets/icons/prev.png);
-    background-repeat: no-repeat;
-    width: 50px;
-    height: 50px;
-    top: 15%;
-    cursor: pointer;
-    left: 0;
-  }
-  
-  .next-btn {
-    border: none;
-    background: url(../assets/icons/next.png);
-    background-repeat: no-repeat;
-    top: 15%;
-    height: 50px;
-    width: 50px;
-    flex-basis: auto;
-    cursor: pointer;
-  }
-  
-  .close-btn {
-    position: fixed;
-    top: 5%;
-    right: 25%;
-    height: 60px;
-    width: 60px;
-    cursor: pointer;
-    border: none;
-    background: url(../assets/icons/close.png);
-    background-repeat: no-repeat;
-  }
-  
-  .media-title {
-    color: #901c1c;
-  }
-  
-  .media-content {
-    width: 640px;
-    height: 640px;
-  
-    .media {
-      object-fit: cover;
-      width: 100%;
-      height: 640px;
-    }
-  }
-  
-  #contact_modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.6);
-  }
-  
-  .modal_btn {
+  .btn-contact {
     font-size: 20px;
     font-weight: bold;
     color: white;
@@ -384,12 +14,44 @@
     width: 170px;
     height: 70px;
     border: none;
-    background-color: #901C1C;
+    background-color: $primary;
     border-radius: 5px;
     cursor: pointer;
-    margin: auto;
   }
-  
+
+  .profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 300px;
+  }
+
+  .profile-card-container {
+    @include card-profil();
+  }
+
+  .profile-img-container {
+    img {
+      @include img-profil();
+    }
+
+  }
+}
+
+
+.main__profile-container {
+  @include desktop-only {
+    margin: 0 0 0 4.5%;
+  }
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+#contact_modal {
+  display: none;
+
   .modal {
     border-radius: 5px;
     background-color: #DB8876;
@@ -400,103 +62,446 @@
     justify-content: space-between;
     padding: 35px;
     margin: auto;
-  
+
     header {
       justify-content: space-between;
       width: 100%;
-  
+
       img {
         cursor: pointer;
       }
-  
+
       h2 {
         font-size: 64px;
         font-weight: normal;
         text-align: center;
       }
+
     }
-  }
-  
-  form {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 5%;
-  
-    label {
-      color: #312E2E;
-      font-size: 36px;
-    }
-  
-    div {
+
+    form {
       display: flex;
+      width: 100%;
       flex-direction: column;
-      width: 100%;
-      align-items: self-start;
-      margin-bottom: 26px;
-    }
-  
-    input {
-      width: 100%;
-      height: 68px;
-      border: none;
-      border-radius: 5px;
+      align-items: flex-start;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: self-start;
+        margin-bottom: 26px;
+
+        label {
+          color: #312E2E;
+          font-size: 36px;
+        }
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        height: 68px;
+        border: none;
+        border-radius: 5px;
+      }
+
+      #btn-form {
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        padding: 11px;
+        width: 170px;
+        height: 70px;
+        border: none;
+        background-color: #901C1C;
+        border-radius: 5px;
+        cursor: pointer;
+      }
     }
   }
-  
-  .active-like {
-    color: $bg-color-liked !important;
-    .fa-heart {
-      color: $bg-color-liked !important;
-    }
 }
 
 
-// nav .drop-down {
-//     list-style: none;
-//     overflow: hidden;
-  
-//     /* When ul height is reduced, ensure overflowing li are not shown */
-//     height: 172px;
-  
-//     /* 172px = (38 (li) + 5 (li border)) * 4 (number of li) */
-//     background-color: #34495e;
-//     font-family: Arial;
-//     width: 200px;
-//     margin: 0 auto;
-//     padding: 0;
-//     text-align: center;
-//     -webkit-transition: height 0.3s ease;
-//     transition: height 0.3s ease;
-  
-//     &.closed {
-//       /*  When toggled via jQuery this class will reduce the height of the ul which inconjuction
-//           with overflow: hidden set on the ul will hide all list items apart from the first */
-//       /* current li height 38px + 5px border */
-//       height: 43px;
-//     }
-  
-//     option {
-//       border-bottom: 5px solid #2c3e50;
-  
-//       span {
-//         display: block;
-//         color: #ecf0f1;
-//         text-decoration: none;
-//         padding: 10px;
-  
-//         /* Larger touch target area */
-//       }
-  
-//       &:first-child span:after {
-//         content: "\25BC";
-//         float: right;
-//         margin-left: -30px;
-  
-//         /* Excessive -margin to bring link text back to center */
-//         margin-right: 5px;
-//       }
-//     }
-//   }
-  
+/*------------------------------------*\
+   card-images
+\*------------------------------------*/
+
+.images {
+  @include grid(25px);
+
+  @include mobile-only {
+
+    @include grid(15px);
+  }
+
+  @include tablet-only {
+
+
+    @include grid(15px)
+  }
+
+  @include laptop-only {
+    @include grid(15px);
+    margin-left: 25px;
+  }
+
+  @include desktop-only {
+    &>* {
+      margin-left: 25px;
+    }
+
+  }
+
+  margin-top: 35px;
+
+  &__post-container {
+    @include center-flex-column;
+
+    @include mobile-only {
+      &:nth-child(odd) {
+        background-color: $odd-card-bg-color;
+      }
+    }
+  }
+
+  &__post {
+    @include center-flex-column;
+    max-width: 350px;
+
+    @include mobile-only {
+      max-width: 75%;
+    }
+
+    @include tablet-only {
+      max-width: 350px;
+    }
+
+    transition: scale 350ms ease-out;
+
+    &:hover {
+      scale: 105%;
+    }
+  }
+
+  &__post-container {
+    max-width: 350px;
+    @include center-flex-column;
+
+    @include mobile-only {
+      width: 100%;
+      max-width: 100%;
+      @include center-flex;
+    }
+
+    @include tablet-only {
+      max-width: 100%;
+    }
+
+    @include laptop-only {
+      max-width: 100%;
+    }
+  }
+
+  &__post-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 96%;
+  }
+
+  &__post-description {
+    color: $bg-color-secondary;
+  }
+
+  &__post-like-button {
+    color: $bg-color-secondary;
+    margin-right: 1px;
+  }
+
+  &__image {
+    width: 350px;
+    height: 300px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+    border-radius: var(--buttons-border-radius);
+  }
+
+  &__video {
+    width: 350px;
+    height: 300px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: var(--buttons-border-radius);
+    @include center-flex-column;
+  }
+
+}
+
+
+/*------------------------------------*\
+   Card Likes Total
+\*------------------------------------*/
+#total-card {
+  position: fixed;
+  bottom: 0;
+  right: 2%;
+  padding: 10px 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  color: #000000;
+  background-color: #DB8876;
+  font-size: 22px;
+  border-radius: 5px 5px 0 0;
+
+  i {
+    margin-right: 20px;
+    color: #000000;
+    margin-left: 5px;
+  }
+}
+
+
+
+/*------------------------------------*\
+   Caroussel Modal
+\*------------------------------------*/
+.lightbox-modal {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  width: 2000px;
+  height: 100%;
+  margin: auto;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content {
+  z-index: 1000;
+  width: 1200px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.prev-btn {
+  border: none;
+  background: url(../assets/icons/prev.png);
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  top: 15%;
+  cursor: pointer;
+  left: 0;
+}
+
+.next-btn {
+  border: none;
+  background: url(../assets/icons/next.png);
+  background-repeat: no-repeat;
+  top: 15%;
+  height: 50px;
+  width: 50px;
+  flex-basis: auto;
+  cursor: pointer;
+}
+
+.close-btn {
+  position: fixed;
+  top: 5%;
+  right: 25%;
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+  border: none;
+  background: url(../assets/icons/close.png);
+  background-repeat: no-repeat;
+}
+
+.media-title {
+  color: #901c1c;
+}
+
+.media-content {
+  width: 640px;
+  height: 640px;
+
+  .media {
+    object-fit: cover;
+    width: 100%;
+    height: 640px;
+  }
+}
+
+#contact_modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal_btn {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  padding: 11px;
+  width: 170px;
+  height: 70px;
+  border: none;
+  background-color: #901C1C;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: auto;
+}
+
+.modal {
+  border-radius: 5px;
+  background-color: #DB8876;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px;
+  margin: auto;
+
+  header {
+    justify-content: space-between;
+    width: 100%;
+
+    img {
+      cursor: pointer;
+    }
+
+    h2 {
+      font-size: 64px;
+      font-weight: normal;
+      text-align: center;
+    }
+  }
+}
+
+form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 5%;
+
+  label {
+    color: #312E2E;
+    font-size: 36px;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: self-start;
+    margin-bottom: 26px;
+  }
+
+  input {
+    width: 100%;
+    height: 68px;
+    border: none;
+    border-radius: 5px;
+  }
+}
+
+.active-like {
+  color: $bg-color-liked !important;
+
+  .fa-heart {
+    color: $bg-color-liked !important;
+  }
+}
+
+/*------------------------------------*\
+   DROPDOWN
+\*------------------------------------*/
+
+
+div {
+  margin-top: 40px;
+
+  .sort-container {
+    margin: 20px 0 20px 100px;
+  }
+
+  .sort-text {
+    padding: 0;
+    margin-right: 10px;
+    border: none;
+    background: none;
+    font-weight: bold;
+  }
+
+  select {
+    list-style: none;
+    overflow: hidden;
+
+    /* When ul height is reduced, ensure overflowing li are not shown */
+    height: 49px;
+    color: white;
+    /* 172px = (38 (li) + 5 (li border)) * 4 (number of li) */
+    background-color: #901C1C;
+    font-family: Arial;
+    width: 170px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    -webkit-transition: height 0.3s ease;
+    transition: height 0.3s ease;
+
+    &.closed {
+      /*  When toggled via jQuery this class will reduce the height of the ul which inconjuction
+          with overflow: hidden set on the ul will hide all list items apart from the first */
+      /* current li height 38px + 5px border */
+      height: 43px;
+    }
+
+    option {
+      //border-bottom: 2px solid white;
+      height: 32px;
+
+      a {
+        display: block;
+        color: #ecf0f1;
+        text-decoration: none;
+        padding: 10px;
+        text-align: center;
+
+        /* Larger touch target area */
+      }
+
+      &:first-child a:after {
+        content: "\25BC";
+        float: right;
+        margin-left: -30px;
+
+        /* Excessive -margin to bring link text back to center */
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+/* Drop Down Styles
+================================ */

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
 .photograph-header {
   background-color: #FAFAFA;
@@ -53,6 +54,16 @@
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.main__profile-container {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 1150px) {
+  .main__profile-container {
+    margin: 0 0 0 4.5%;
+  }
 }
 
 #contact_modal {
@@ -158,21 +169,6 @@
     margin-left: 25px;
   }
 }
-.images__sorter {
-  margin-left: 25px;
-  display: flex;
-  justify-content: flex-start;
-  gap: 25px;
-}
-@media screen and (max-width: 768px) {
-  .images__sorter {
-    justify-content: center;
-    align-items: center;
-  }
-}
-.images__select-container {
-  position: relative;
-}
 .images__post-container {
   display: flex;
   flex-direction: column;
@@ -269,35 +265,6 @@
   justify-content: center;
   align-items: center;
   gap: 0px;
-}
-
-/*------------------------------------*\
-   DROPDOWN
-\*------------------------------------*/
-.sort-container {
-  margin: 20px 0 20px 100px;
-}
-
-.sort-button {
-  padding: 0;
-  margin-right: 10px;
-  border: none;
-  background: none;
-}
-
-.sort-dropdown {
-  font-size: 12px;
-  font-weight: bold;
-  color: white;
-  padding: 11px;
-  border: none;
-  background-color: #901C1C;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: auto;
-}
-.sort-dropdown option {
-  cursor: pointer;
 }
 
 /*------------------------------------*\
@@ -482,71 +449,64 @@ form input {
   color: #901C1C !important;
 }
 
-.dropdown-menu {
-  margin-top: -5px;
-  background-color: var(--buttons-bg-color);
-  width: 170px;
-  max-height: 170px;
-  border-radius: 0 0 var(--buttons-border-radius) var(--buttons-border-radius);
+/*------------------------------------*\
+   DROPDOWN
+\*------------------------------------*/
+div {
+  margin-top: 40px;
 }
-@media screen and (max-width: 768px) {
-  .dropdown-menu {
-    display: none;
-  }
+div .sort-container {
+  margin: 20px 0 20px 100px;
 }
-.dropdown-menu__sort-button {
-  display: block;
-  background-color: #901C1C;
+div .sort-text {
+  padding: 0;
+  margin-right: 10px;
+  border: none;
+  background: none;
+  font-weight: bold;
+}
+div select {
+  list-style: none;
+  overflow: hidden;
+  /* When ul height is reduced, ensure overflowing li are not shown */
+  height: 49px;
   color: white;
-  font-size: 16px;
-  text-align: left;
-  padding: 14px;
+  /* 172px = (38 (li) + 5 (li border)) * 4 (number of li) */
+  background-color: #901C1C;
+  font-family: Arial;
   width: 170px;
-  border-radius: 5px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  transition: height 0.3s ease;
 }
-@media screen and (max-width: 768px) {
-  .dropdown-menu__sort-button {
-    display: none;
-  }
+div select.closed {
+  /*  When toggled via jQuery this class will reduce the height of the ul which inconjuction
+      with overflow: hidden set on the ul will hide all list items apart from the first */
+  /* current li height 38px + 5px border */
+  height: 43px;
 }
-.dropdown-menu__icon-container {
-  position: absolute;
-  right: 25px;
-  top: 18px;
-  transition: rotate 250ms ease-out;
-  aspect-ratio: 1/1;
-  height: 12px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 0px;
+div select option {
+  height: 32px;
 }
-.dropdown-menu__icon {
-  font-size: 14px;
-  color: var(--buttons-color);
-  position: absolute;
+div select option a {
+  display: block;
+  color: #ecf0f1;
+  text-decoration: none;
+  padding: 10px;
+  text-align: center;
+  /* Larger touch target area */
 }
-.dropdown-menu__list {
-  height: inherit;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-.dropdown-menu__list-item {
-  padding-block: 14px;
-  width: 88%;
-  text-align: left;
-  border-top: 2px solid white;
-  color: var(--buttons-color);
-}
-.dropdown-menu__list-item:hover {
-  cursor: pointer;
-  background-color: var(--buttons-bg-color--hover);
-  color: var(--buttons-color--hover);
+div select option:first-child a:after {
+  content: "▼";
+  float: right;
+  margin-left: -30px;
+  /* Excessive -margin to bring link text back to center */
+  margin-right: 5px;
 }
 
+/* Drop Down Styles
+================================ */
 /****** Elad Shechter's RESET *******/
 /*** box sizing border-box for all elements ***/
 *,
