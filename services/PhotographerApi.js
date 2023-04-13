@@ -91,26 +91,40 @@ class MediasApi extends Api {
     }
 
     sortMedias(mediasPhotographer, postsContainer, photographerName) {
-        
-        const sortDropdown = document.querySelector(".sort-dropdown");
-        sortDropdown.addEventListener("change", () => {
-            const sortOption = sortDropdown.value;
 
+        const elements = document.querySelectorAll('ul > li');
+        const short = document.querySelector('.nav-button')
+        const hideDropdown = document.querySelector('.drop-down__closed')
+
+          elements.forEach( landing => {
+            landing.addEventListener('click', (e) => {
+                
+                let sortOption = e.target.innerText
             let sortedArray = [];
-            switch (sortOption) {
-              case "title": {
+            switch (sortOption.toLowerCase()) {
+              case "titre": { 
+                
+                short.textContent = sortOption
+                hideDropdown.classList.add('closed')
+                
                 sortedArray = mediasPhotographer.sort((valueA, valueB) => {
                   return valueA.title.localeCompare(valueB.title);
                 });
                 break;
               }
-              case "popularity": {
+              case "popularité": {
+
+                short.textContent = sortOption
+                hideDropdown.classList.add('closed')
                 sortedArray = mediasPhotographer.sort((valueA, valueB) => {
                   return valueB.likes - valueA.likes;
                 });
                 break;
               }
               case "date": {
+
+                short.textContent = sortOption
+                hideDropdown.classList.add('closed')
                 sortedArray = mediasPhotographer.sort((valueA, valueB) => {
                   return valueA.date - valueB.date;
                 });
@@ -119,7 +133,8 @@ class MediasApi extends Api {
             }
             
             PhotographerApp.createCard(mediasPhotographer, postsContainer, photographerName);
-          });
+            });
+          });   
 
     }
 

@@ -31,11 +31,10 @@ class PhotographerApp {
 
       formContact(photographer)
       likesCounterCard(photographer.price, medias)
- 
+      
     })
 
     landing()
-   
 
   }
 
