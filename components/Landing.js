@@ -12,7 +12,7 @@ const landing = () => {
     <ul class="drop-down__closed closed">
     <div class="drop-down__icon-container">
             <i class="fa-solid fa-chevron-down dropdown__icon"></i>
-          </div>
+            </div>
       <li id="short"><a href="#" class="nav-button"></a></li>
       <li id="popularity"><a href="#">Popularité</a></li>
       <li id="date"><a href="#">Date</a></li>
@@ -23,8 +23,8 @@ const landing = () => {
   `
   const dropDwonClosed = document.querySelector('.drop-down__closed')
 
-  const toggleLanding = () => {
-
+  const toggleLanding = () =>{
+  
     dropDwonClosed.classList.toggle('closed')
   }
   document.querySelector('.drop-down__icon-container').addEventListener('click', toggleLanding)

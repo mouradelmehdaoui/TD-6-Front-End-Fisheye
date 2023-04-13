@@ -481,7 +481,7 @@ form input {
   cursor: pointer;
 }
 .drop-down__closed {
-  height: 170px;
+  height: 205px;
   border-radius: 5px;
   background-color: #901C1C;
   font-family: Arial;
@@ -490,8 +490,16 @@ form input {
   padding: 0;
   transition: height 0.3s ease;
 }
+.drop-down__closed li:nth-last-child(-n+3) {
+  height: 42px;
+  width: 88%;
+  text-align: left;
+  border-top: 2px solid #fff;
+  color: white;
+  margin: 8px;
+}
 .drop-down__closed.closed {
-  height: 43px;
+  height: 50px;
 }
 .drop-down__closed li {
   height: 42px;

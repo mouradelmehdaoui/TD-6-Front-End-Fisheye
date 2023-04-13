@@ -440,74 +440,86 @@ form {
 
 .drop-down {
 
-    margin-left: 25px;
-    display: flex;
-    justify-content: flex-start;
-    gap: 25px;
+  margin-left: 25px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 25px;
 
-    @include mobile-only {
-        justify-content: center;
-        align-items: center
-    }
-
-&__title {
-  font-weight: bold;
-}
-
-&__icon-container {
-  //Absolute to the position of the select container, line: 466
-  position: relative;
-  top: 20px;
-  float: right;
-  right: 6px;
-  color:white;
-  cursor: pointer;
-}
-
-&__icon {
-  font-size: 14px;
-  color: var(--buttons-color);
-  position: absolute;
-  cursor: pointer;
-}
-
-&__closed {
-
-  height: 170px;
-  border-radius: $buttons-border-radius;
-  background-color: #901C1C;
-  font-family: Arial;
-  width: 170px;
-  margin: 0 auto;
-  padding: 0;
-  -webkit-transition: height 0.3s ease;
-  transition: height 0.3s ease;
-
-  &.closed {
-    height: 43px;
+  @include mobile-only {
+    justify-content: center;
+    align-items: center
   }
 
-  li {
-    height: 42px;
-    a {
-      font-family: 'DM Sans';
-      display: block;
-      color: #ecf0f1;
-      text-decoration: none;
-      padding: 10px;
+  &__title {
+    font-weight: bold;
+  }
 
-      /* Larger touch target area */
+  &__icon-container {
+    //Absolute to the position of the select container, line: 466
+    position: relative;
+    top: 20px;
+    float: right;
+    right: 6px;
+    color: white;
+    cursor: pointer;
+  }
+
+  &__icon {
+    font-size: 14px;
+    color: var(--buttons-color);
+    position: absolute;
+    cursor: pointer;
+  }
+
+  &__closed {
+
+    height: 205px;
+    border-radius: $buttons-border-radius;
+    background-color: #901C1C;
+    font-family: Arial;
+    width: 170px;
+    margin: 0 auto;
+    padding: 0;
+    -webkit-transition: height 0.3s ease;
+    transition: height 0.3s ease;
+
+    li:nth-last-child(-n+3) {
+      height: 42px;
+      width: 88%;
+      text-align: left;
+      border-top: 2px solid #fff;
+      color: $buttons-color;
+      margin: 8px;
     }
 
-    // &:first-child a:after {
-    //   font-family: FontAwesome;
-    //   content: "\f107";
-    //   float: right;
-    //   margin-left: -30px;
-    //   margin-right: 5px;
-    // }
+
+
+    &.closed {
+      height: 50px;
+    }
+
+    li {
+      height: 42px;
+
+      a {
+        font-family: 'DM Sans';
+        display: block;
+        color: #ecf0f1;
+        text-decoration: none;
+        padding: 10px;
+
+        /* Larger touch target area */
+      }
+
+      // &:first-child a:after {
+      //   font-family: FontAwesome;
+      //   content: "\f107";
+      //   float: right;
+      //   margin-left: -30px;
+      //   margin-right: 5px;
+      // }
+    }
   }
-}
 
 }
 
@@ -517,164 +529,164 @@ form {
 
 .contact {
   &__modal {
-      @include position-fix-center;
-      z-index: 3;
-      overflow: hidden;
-      background-color: $dialog-bg-color;
-      color: $text-color-invoice;
-      padding: 15px;
-      border-radius: $buttons-border-radius;
-      box-shadow: 0px 2px 8px $dialog-shadow-color;
+    @include position-fix-center;
+    z-index: 3;
+    overflow: hidden;
+    background-color: $dialog-bg-color;
+    color: $text-color-invoice;
+    padding: 15px;
+    border-radius: $buttons-border-radius;
+    box-shadow: 0px 2px 8px $dialog-shadow-color;
 
-      width: 40%;
-      height: 90vh;
+    width: 40%;
+    height: 90vh;
 
-      @include laptop-only {
-          width: 60%;
-      }
+    @include laptop-only {
+      width: 60%;
+    }
 
-      @include tablet-only {
-          width: 70%;
-      }
+    @include tablet-only {
+      width: 70%;
+    }
 
-      @include mobile-only {
-          width: 100%;
-          height: 100vh;
-      }
+    @include mobile-only {
+      width: 100%;
+      height: 100vh;
+    }
 
-      &-content {
-          height: 100%;
-      }
+    &-content {
+      height: 100%;
+    }
 
-      &::-webkit-backdrop {
-          //Due to a bug, we cannot use CSS variables to give a color to the backdrop
-          // background-color: var(--dialog-backdrop-bg-color);
-          background-color: #c4c4c466;
-      }
+    &::-webkit-backdrop {
+      //Due to a bug, we cannot use CSS variables to give a color to the backdrop
+      // background-color: var(--dialog-backdrop-bg-color);
+      background-color: #c4c4c466;
+    }
 
-      &::backdrop {
-          //Due to a bug, we cannot use CSS variables to give a color to the backdrop
-          // background-color: var(--dialog-backdrop-bg-color);
-          background-color: #c4c4c466;
-      }
+    &::backdrop {
+      //Due to a bug, we cannot use CSS variables to give a color to the backdrop
+      // background-color: var(--dialog-backdrop-bg-color);
+      background-color: #c4c4c466;
+    }
   }
 
   &__title-button {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      height: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 15%;
   }
 
   &__title {
-      font-size: 44px;
+    font-size: 44px;
 
-      @include mobile-only {
-          font-size: 34px;
-      }
+    @include mobile-only {
+      font-size: 34px;
+    }
   }
 
   &__button-close-dialog {
-      color: $buttons-color;
-      aspect-ratio: 1/1;
-      height: 35px;
+    color: $buttons-color;
+    aspect-ratio: 1/1;
+    height: 35px;
 
-      &-icon {
-          font-size: 35px;
-          color: $text-color-invoice;
-      }
+    &-icon {
+      font-size: 35px;
+      color: $text-color-invoice;
+    }
   }
 
   &__form {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 25px;
-      height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 25px;
+    height: 75%;
   }
 
   &__legend {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
 
   &__fieldset {
-      width: 100%;
+    width: 100%;
 
-      &-section {
-          width: inherit;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-      }
+    &-section {
+      width: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
   }
 
   &__label {
-      font-size: 26px;
+    font-size: 26px;
   }
 
   &__input {
-      border-radius: $buttons-border-radius;
-      width: 100%;
-      height: 50px;
-      font-size: 22px;
-      padding: 5px 10px;
+    border-radius: $buttons-border-radius;
+    width: 100%;
+    height: 50px;
+    font-size: 22px;
+    padding: 5px 10px;
   }
 
   &__text-area {
-      border-radius: $buttons-border-radius;
-      width: 100%;
-      height: 120px;
-      font-size: 22px;
-      padding: 5px 10px;
+    border-radius: $buttons-border-radius;
+    width: 100%;
+    height: 120px;
+    font-size: 22px;
+    padding: 5px 10px;
   }
 
   &__error-message {
-      margin-top: -2px;
-      padding-inline: 5px;
-      background-color: $input-outline-color--invalid;
-      color: $input-message-color;
-      border-radius: 0 0 $buttons-border-radius $buttons-border-radius;
-      margin-bottom: 10px;
-      font-size: 14px;
+    margin-top: -2px;
+    padding-inline: 5px;
+    background-color: $input-outline-color--invalid;
+    color: $input-message-color;
+    border-radius: 0 0 $buttons-border-radius $buttons-border-radius;
+    margin-bottom: 10px;
+    font-size: 14px;
   }
 
   &__submit-button {
-      border-radius: $buttons-border-radius;
+    border-radius: $buttons-border-radius;
 
-      &:focus {
-          background-color: $bg-color-quaternary;
-      }
+    &:focus {
+      background-color: $bg-color-quaternary;
+    }
 
-      @include mobile-only {
-          width: 100%;
-      }
+    @include mobile-only {
+      width: 100%;
+    }
 
-      @include tablet-only {
-          width: 100%;
-      }
+    @include tablet-only {
+      width: 100%;
+    }
 
-      @include laptop-only {
-          width: 100%;
-      }
+    @include laptop-only {
+      width: 100%;
+    }
 
-      &:hover {
-          background-color: $bg-color-quaternary;
-      }
+    &:hover {
+      background-color: $bg-color-quaternary;
+    }
 
-      &:active {
-          background-color: $buttons-bg-color--active;
-          color: $buttons-color--active;
+    &:active {
+      background-color: $buttons-bg-color--active;
+      color: $buttons-color--active;
 
-      }
+    }
   }
 
 
   &__validated-form {
-      height: 70%;
-      @include center-flex-column;
+    height: 70%;
+    @include center-flex-column;
   }
 
 }
