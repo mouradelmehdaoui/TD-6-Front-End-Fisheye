@@ -11,12 +11,12 @@ const landing = () => {
     <nav>
     <ul class="drop-down__closed closed">
     <div class="drop-down__icon-container">
-            <i class="fa-solid fa-chevron-down dropdown__icon"></i>
+            <i class="fa-solid fa-chevron-down dropdown__icon" tabindex="0"></i>
             </div>
-      <li id="short"><a href="#" class="nav-button"></a></li>
-      <li id="popularity"><a href="#">Popularité</a></li>
-      <li id="date"><a href="#">Date</a></li>
-      <li id="title"><a href="#">Titre</a></li>
+      <li class="nav-button">Popularité</li>
+      <li id="popularity"><a href="#" tabindex="0">Popularité</a></li>
+      <li id="date"><a href="#" tabindex="0">Date</a></li>
+      <li id="title"><a href="#" tabindex="0">Titre</a></li>
     </ul>
   </nav>
   </div>
@@ -28,6 +28,13 @@ const landing = () => {
     dropDwonClosed.classList.toggle('closed')
   }
   document.querySelector('.drop-down__icon-container').addEventListener('click', toggleLanding)
+  dropDwonClosed.addEventListener('keydown', (event) => {
+        
+    if (event.key === 'Enter' || event.key === 'Escape') {
+      toggleLanding()
+    }
+}); 
+
 
 }
 

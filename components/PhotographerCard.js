@@ -49,7 +49,7 @@ class PhotographerCard{
             <h3 class="profile-slogan" >${tagline}</h3>
           </div>
         </div>
-        <button class="btn-contact" aria-hidden="true" aria-label="Contact Me">Contactez-moi</button>
+        <button class="btn-contact" aria-hidden="true" aria-label="Contact Me" tabindex="0">Contactez-moi</button>
         <div class="profile-contact">
         <div class="profile-img-container">
           <img src="./assets/photographers/${portrait}"

@@ -52,8 +52,9 @@ const formContact = (photographer) => {
           aria-label="Bouton pour envoyer le message">Envoyer</button>
       </form>
 
-      <div class="contact__validated-form hide">
-        <h2 class="contact__validated-form-message">Message envoyé avec succès!</h2>
-      </div>
+      <div id="validationForm">
+      <p id="validMessage"></p>
+      <input id="btnValid" class="button btn-submit" type="button" value="Fermer" />
+    </div>
     </div>`
 }

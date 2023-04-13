@@ -26,7 +26,7 @@ class PhotographerApp {
       this.MediasApi.sortMedias(medias, postsContainer, photographerName)
 
       console.log(photographerName);
-      PhotographerApp.createCarrousel(medias, photographer, photographerName)
+      PhotographerApp.createCarrousel(medias, photographerName)
 
 
       formContact(photographer)
@@ -45,8 +45,8 @@ class PhotographerApp {
     ).createPosts();
   }
 
-  static createCarrousel(medias, photographer, photographerName) {
-    const carrousel = new Carrousel(medias, photographer, photographerName)
+  static createCarrousel(medias,photographerName) {
+    const carrousel = new Carrousel(medias, photographerName)
     carrousel.init()
   }
 

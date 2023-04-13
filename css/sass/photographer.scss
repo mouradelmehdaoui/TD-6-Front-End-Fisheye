@@ -490,6 +490,15 @@ form {
       border-top: 2px solid #fff;
       color: $buttons-color;
       margin: 8px;
+
+      a{
+
+        font-family: 'DM Sans';
+        display: block;
+        text-decoration: none;
+        padding: 10px;
+        color:#fff;
+      }
     }
 
 
@@ -498,16 +507,21 @@ form {
       height: 50px;
     }
 
-    li {
-      height: 42px;
-
+    .nav-button
+    {
+      font-family: "DM Sans";
+    display: block;
+    text-decoration: none;
+    padding: 13px 0px 8px 18px;
+    color: #fff;
+    }
+      
       a {
         font-family: 'DM Sans';
         display: block;
-        color: #ecf0f1;
         text-decoration: none;
         padding: 10px;
-
+        color:#fff;
         /* Larger touch target area */
       }
 
@@ -521,7 +535,7 @@ form {
     }
   }
 
-}
+
 
 
 /* Drop Down Styles
@@ -533,7 +547,7 @@ form {
     z-index: 3;
     overflow: hidden;
     background-color: $dialog-bg-color;
-    color: $text-color-invoice;
+    color: $dialog-bg-color;
     padding: 15px;
     border-radius: $buttons-border-radius;
     box-shadow: 0px 2px 8px $dialog-shadow-color;
@@ -576,6 +590,7 @@ form {
     justify-content: space-between;
     align-items: flex-start;
     height: 15%;
+    color: #000000;
   }
 
   &__title {
@@ -610,6 +625,7 @@ form {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    color: #000000;
   }
 
   &__fieldset {
@@ -689,4 +705,17 @@ form {
     @include center-flex-column;
   }
 
+}
+
+/*Validation du formulaire*/
+#validationForm {
+  display: none;
+  text-align: center;
+  flex-direction: column;
+  height: 65vh;
+}
+
+#validationForm #validMessage {
+  margin: auto;
+  color: white;
 }

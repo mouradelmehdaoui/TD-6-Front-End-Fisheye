@@ -498,18 +498,29 @@ form input {
   color: white;
   margin: 8px;
 }
+.drop-down__closed li:nth-last-child(-n+3) a {
+  font-family: "DM Sans";
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  color: #fff;
+}
 .drop-down__closed.closed {
   height: 50px;
 }
-.drop-down__closed li {
-  height: 42px;
-}
-.drop-down__closed li a {
+.drop-down__closed .nav-button {
   font-family: "DM Sans";
   display: block;
-  color: #ecf0f1;
+  text-decoration: none;
+  padding: 13px 0px 8px 18px;
+  color: #fff;
+}
+.drop-down__closed a {
+  font-family: "DM Sans";
+  display: block;
   text-decoration: none;
   padding: 10px;
+  color: #fff;
   /* Larger touch target area */
 }
 
@@ -523,7 +534,7 @@ form input {
   z-index: 3;
   overflow: hidden;
   background-color: #DB8876;
-  color: black;
+  color: #DB8876;
   padding: 15px;
   border-radius: 5px;
   box-shadow: 0px 2px 8px rgba(10, 10, 10, 0.3019607843);
@@ -557,6 +568,7 @@ form input {
   justify-content: space-between;
   align-items: flex-start;
   height: 15%;
+  color: #000000;
 }
 .contact__title {
   font-size: 44px;
@@ -587,6 +599,7 @@ form input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  color: #000000;
 }
 .contact__fieldset {
   width: 100%;
@@ -658,4 +671,17 @@ form input {
   justify-content: center;
   align-items: center;
   gap: 0px;
+}
+
+/*Validation du formulaire*/
+#validationForm {
+  display: none;
+  text-align: center;
+  flex-direction: column;
+  height: 65vh;
+}
+
+#validationForm #validMessage {
+  margin: auto;
+  color: white;
 }

@@ -1,10 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 class Carrousel {
-  constructor(mediasData, photographerData, photographerName) {
+  constructor(mediasData, photographerName) {
     this.galleryIndex = 0
     this.modal = null;
     this.isOpen = false;
-    this.photographerData = photographerData;
     this.firstName = photographerName
     this.mediasData = mediasData;
     this.mediaPath = `assets/images/medias/${this.firstName}/`;
@@ -74,7 +73,7 @@ class Carrousel {
       }
     });
 
-  }       
+  }
 
   show() {
 
@@ -126,39 +125,37 @@ class Carrousel {
   }
 
   getCarrousel() {
-    
-      document.addEventListener('keydown', (event) => {
-        
-        if (event.key === 'Enter') {
-          
-          const str = event.target.ariaLabel
-          this.title = str.substring(str.indexOf(" ") + 8)
 
-          let mediaType = str.trim().split(' ').shift();
-          
-          if(mediaType === 'Video' || mediaType === 'Image') {
+    document.addEventListener('keydown', (event) => {
 
-            const mediaIndex = this.mediasData.findIndex(media => media.title === this.title);
-                this.show();
-                this.updateMedia(mediaIndex);
-          }
-        }
-    }); 
+      if (event.key === 'Enter') {
 
+        const str = event.target.ariaLabel
+        this.title = str.substring(str.indexOf(" ") + 8)
 
-      this.mediaList.forEach((media, index) => {
-        media.addEventListener('click', () => {
-          const mediaIndex = index
-          this.updateMedia(mediaIndex);
+        let mediaType = str.trim().split(' ').shift();
+
+        if (mediaType === 'Video' || mediaType === 'Image') {
+
+          const mediaIndex = this.mediasData.findIndex(media => media.title === this.title);
           this.show();
-        });
-      });   
-    
+          this.updateMedia(mediaIndex);
+        }
+      }
+    });
+
   }
   init() {
-    
+
+    this.mediaList.forEach((media, index) => {
+      media.addEventListener('click', () => {
+        const mediaIndex = index
+        this.updateMedia(mediaIndex);
+        this.show();
+      });
+    });
+
     this.getCarrousel()
-    
   }
 
 }
