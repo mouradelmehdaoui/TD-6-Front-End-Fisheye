@@ -3,6 +3,7 @@ class PhotographerApp {
     this.$cardsContainer = document.querySelector(".photograph-header");
     this.PhotographerApi = new PhotographerApi('./api/photographers.json')
     this.MediasApi = new MediasApi('./api/photographers.json')
+    
   }
 
   async main() {
@@ -24,13 +25,12 @@ class PhotographerApp {
 
       PhotographerApp.createCard(medias, postsContainer, photographerName);
       this.MediasApi.sortMedias(medias, postsContainer, photographerName)
-
-      console.log(photographerName);
-      PhotographerApp.createCarrousel(medias, photographerName)
-
+      
+      this.createCarrousel(medias, photographerName)
 
       formContact(photographer)
       likesCounterCard(photographer.price, medias)
+      this.MediasApi.setLikes(photographer.price, medias)
       
     })
 
@@ -45,9 +45,11 @@ class PhotographerApp {
     ).createPosts();
   }
 
-  static createCarrousel(medias,photographerName) {
+  createCarrousel(medias,photographerName) {
     const carrousel = new Carrousel(medias, photographerName)
     carrousel.init()
+    this.MediasApi.setCarrousel(carrousel)
+    
   }
 
 }

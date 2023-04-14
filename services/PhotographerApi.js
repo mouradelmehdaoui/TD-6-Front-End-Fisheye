@@ -14,8 +14,8 @@ class Api {
         console.log('je suis service phographer Api');
         return fetch(this._url)
             .then(res => res.json())
-            .then(res => 
-                ({
+            .then(res =>
+            ({
                 photographers: [...res.photographers],
                 medias: [...res.media]
             })
@@ -63,13 +63,22 @@ class MediasApi extends Api {
         super(url)
     }
 
+    setCarrousel(carrousel) {
+        this.carrousel = carrousel
+    }
+
+    setLikes(price, medias) {
+        this.price = price;
+        this.medias = medias
+    }
+
     async getAllMedias() {
-        const {medias} = await this.getAll()
+        const { medias } = await this.getAll()
         return medias;
     }
 
     async getMediasById(id) {
-        const  medias  = await this.getAllMedias()
+        const medias = await this.getAllMedias()
 
         if (id == 0) {
             return of(this.getDefaultMedias())
@@ -96,45 +105,48 @@ class MediasApi extends Api {
         const short = document.querySelector('.nav-button')
         const hideDropdown = document.querySelector('.drop-down__closed')
 
-          elements.forEach( landing => {
+        elements.forEach(landing => {
             landing.addEventListener('click', (e) => {
-                
+
                 let sortOption = e.target.innerText
-            let sortedArray = [];
-            switch (sortOption.toLowerCase()) {
-              case "titre": { 
-                
-                short.textContent = sortOption
-                hideDropdown.classList.add('closed')
-                
-                sortedArray = mediasPhotographer.sort((valueA, valueB) => {
-                  return valueA.title.localeCompare(valueB.title);
-                });
-                break;
-              }
-              case "popularité": {
+                let sortedArray = [];
+                switch (sortOption.toLowerCase()) {
+                    case "titre": {
 
-                short.textContent = sortOption
-                hideDropdown.classList.add('closed')
-                sortedArray = mediasPhotographer.sort((valueA, valueB) => {
-                  return valueB.likes - valueA.likes;
-                });
-                break;
-              }
-              case "date": {
+                        short.textContent = sortOption
+                        hideDropdown.classList.add('closed')
 
-                short.textContent = sortOption
-                hideDropdown.classList.add('closed')
-                sortedArray = mediasPhotographer.sort((valueA, valueB) => {
-                  return valueA.date - valueB.date;
-                });
-                break;
-              }
-            }
-            
-            PhotographerApp.createCard(mediasPhotographer, postsContainer, photographerName);
+                        sortedArray = mediasPhotographer.sort((valueA, valueB) => {
+                            return valueA.title.localeCompare(valueB.title);
+                        });
+                        break;
+                    }
+                    case "popularité": {
+
+                        short.textContent = sortOption
+                        hideDropdown.classList.add('closed')
+                        sortedArray = mediasPhotographer.sort((valueA, valueB) => {
+                            return valueB.likes - valueA.likes;
+                        });
+                        break;
+                    }
+                    case "date": {
+
+                        short.textContent = sortOption
+                        hideDropdown.classList.add('closed')
+                        sortedArray = mediasPhotographer.sort((valueA, valueB) => {
+                            return valueA.date - valueB.date;
+                        });
+                        break;
+                    }
+                }
+
+                PhotographerApp.createCard(mediasPhotographer, postsContainer, photographerName);
+                this.carrousel.callCarrousel();
+                likesCounterCard(this.price, this.medias)
+
             });
-          });   
+        });
 
     }
 

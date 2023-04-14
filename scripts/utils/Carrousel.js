@@ -147,7 +147,10 @@ class Carrousel {
   }
   init() {
 
+    this.mediaList = document.querySelectorAll('.images__image, .images__video');
     this.mediaList.forEach((media, index) => {
+
+      console.log('je suis 1');
       media.addEventListener('click', () => {
         const mediaIndex = index
         this.updateMedia(mediaIndex);
@@ -156,6 +159,12 @@ class Carrousel {
     });
 
     this.getCarrousel()
+  }
+
+
+  callCarrousel() {
+
+    this.init()
   }
 
 }
