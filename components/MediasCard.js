@@ -6,7 +6,6 @@ class MediasCard {
 
   createPosts() {
 
-    console.log('je suis dans createPosts MEdiasCards');
     let postTemplate = "";
     let postsCards = "";
 

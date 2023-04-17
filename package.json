@@ -4,12 +4,16 @@
   "description": "## Démarrer le projet",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint --max-warnings=0 ."
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "sass": "^1.59.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.38.0",
+    "yorkie": "^2.0.0"
   }
-
 }

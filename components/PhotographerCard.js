@@ -5,7 +5,6 @@ class PhotographerCard{
 
   createCards() {
 
-    console.log('je suis ds createCard photographerCard');
     let photographerTemplate = "";
     let photographerCards = "";
 
@@ -36,7 +35,6 @@ class PhotographerCard{
 
   createProfile() {
 
-    console.log('je suis createProfile PhotographerCard.js');
     let profileTemplate = "";
 
     const { name, city, country, tagline, portrait } = this.cards;

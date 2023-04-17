@@ -8,12 +8,10 @@ class PhotographerApp {
 
   async main() {
 
-    console.log('je suis dans PHotographerApp Main');
-
     window.addEventListener('load', async () => {
 
       const params = (new URL(document.location)).searchParams;
-      const id = params.get('id');
+      const id = parseInt(params.get('id'));
       const photographer = await this.PhotographerApi.getPhotographersById(id);
       const medias = await this.MediasApi.getMediasById(id);
       const photographerFullName = photographer.name.split(' ');

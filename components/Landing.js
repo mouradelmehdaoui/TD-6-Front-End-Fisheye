@@ -33,7 +33,7 @@ const landing = () => {
     if (event.key === 'Enter' || event.key === 'Escape') {
       toggleLanding()
     }
-}); 
+  }); 
 
 
 }
