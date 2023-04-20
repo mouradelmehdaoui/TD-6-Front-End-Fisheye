@@ -1,7 +1,6 @@
 
 const contactModal = document.querySelector(".contact__modal");
 const modalBtn = document.querySelector(".btn-contact");
-const validBtn = document.querySelector(".contact__submit-button");
 const closeBtn = document.querySelector(".contact__button-close-dialog");
 const form = document.querySelector(".contact__form");
 const formFinised = document.getElementById('validationForm');
@@ -33,7 +32,6 @@ document.addEventListener("keydown", (event) => {
 
 //  Ajouter validation ou messages d'erreur #3 
 function onSubmit(e) {
-
   
   //debugger;
   let validEmail = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/;
@@ -96,6 +94,9 @@ function onSubmit(e) {
   //Ajouter confirmation quand envoi réussi #4
   if (isValid) {
     e.preventDefault();
+    const myFormData = new FormData(e.target);
+    const formDataObj = Object.fromEntries(myFormData.entries());
+    console.log(formDataObj);
     form.reset();
     finishForm();
   }

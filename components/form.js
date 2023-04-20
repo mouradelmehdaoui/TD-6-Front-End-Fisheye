@@ -25,13 +25,13 @@ const formContact = (photographer) => {
           <legend class="contact__legend">Veuillez remplir ces champs afin de contacter le photographe</legend>
           <section class="contact__fieldset-section" role="group">
             <label for="last-name" class="contact__label">Nom</label>
-            <input type="text" name="name" id="last-name" class="contact__input" aria-invalid="false"
+            <input type="text" name="last-name" id="last-name" class="contact__input" aria-invalid="false"
               aria-errormessage="lat-name-error" />
             <p class="contact__error-message hide" tabindex="0" id="last-name-error"></p>
           </section>
           <section class="contact__fieldset-section" role="group">
             <label for="first-name" class="contact__label">Prénom</label>
-            <input type="text" name="name" id="first-name" class="contact__input" aria-invalid="false"
+            <input type="text" name="first-name" id="first-name" class="contact__input" aria-invalid="false"
               aria-errormessage="first-name-error" />
             <p class="contact__error-message hide" tabindex="0" id="first-name-error"></p>
           </section>
